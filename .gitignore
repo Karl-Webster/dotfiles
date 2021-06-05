@@ -1,0 +1,2 @@
+# Ignore my secret ENV VAR's I really don't want commited
+.bash_secret_env_vars
