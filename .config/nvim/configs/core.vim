@@ -1,17 +1,11 @@
-"pip3 install pynvim Set leader to space
+"Set leader to space
 let mapleader = ' ' 
 
 " Set compatibility to Vim only.
 set nocompatible
 
-" Helps force plug-ins to load correctly when it is turned back on below.
-filetype off
-
 " Turn on syntax highlighting.
 syntax on
-
-" For plug-ins to load correctly.
-filetype plugin indent on
 
 " Automatically wrap text that extends beyond the screen length.
 set wrap
@@ -48,29 +42,7 @@ set clipboard=unnamedplus
 " Stop vim changing my cursor
 set guicursor = 
 
-" Vim Plugin Manager
-call plug#begin('~/.vim/plugged')
-Plug 'dense-analysis/ale' " Auto Linter Engine
-Plug 'vimwiki/vimwiki' " Vim Wiki
-Plug 'morhetz/gruvbox' " Theme
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } "GoLang
-Plug 'neoclide/coc.nvim', {'branch': 'release'} "COC (Install NODEJS too)
-call plug#end()
-
+" Sane TAB settings
 set tabstop=4
 set softtabstop=0 noexpandtab
 set shiftwidth=4
-
-"Theme
-autocmd vimenter * ++nested colorscheme gruvbox " Set Theme
-
-" YAML Stuff
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-let g:indentLine_char = '⦙'
-
-" Yaml Linter (yamllint)
-let g:ale_completion_autoimport = 1
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_sign_error = '✘'
-let g:ale_sign_warning = '⚠'
-let g:ale_lint_on_text_changed = 'never'
